@@ -22,7 +22,7 @@ nav {
         padding: 0.3em 0;
 
         &:after {
-            height: 1px;
+            height: 2px;
             position: absolute;
             content: "";
             transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -31,22 +31,21 @@ nav {
             bottom: 0;
             left: 0;
         }
-
-
     }
 
-    &:hover  span::after {
+    &:hover span::after {
         width: 100%;
     }
 }
 
 fa-icon {
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
     font-size: 0.75rem;
 }
 
 .search-input {
     position: fixed;
+    display: none;
     top: 100px;
     left: 0;
     width: 100vw;
@@ -55,21 +54,40 @@ fa-icon {
     padding-left: calc(3.5vw + 24px);
     font-size: 2rem;
     border: 0;
-    transition: visibility 0s, opacity 0.5s linear;
     caret-color: white;
     color: white;
+    transform: scale(0);
+
+    &::placeholder {
+        color: whitesmoke;
+    }
+
+    &:focus {
+        border: 0;
+        outline: 0;
+    }
 }
 
-.search-input::placeholder {
-    color: whitesmoke;
-}
+@keyframes anim {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      display: block;
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
-.search-input:focus {
-    border: 0;
-    outline: 0;
-}
 
-.hidden {
-    display: none;
-    opacity: 0;
+.active {
+    display: block;
+    opacity: 1;
+    animation: anim .1s ease-in-out;
+    transform: scale(1);
 }

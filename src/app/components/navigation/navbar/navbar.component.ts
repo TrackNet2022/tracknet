@@ -13,7 +13,15 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  toggleSearchBox() {
+    let searchBox = document.getElementById('search-box')
+    searchBox?.classList.toggle('active')
   }
+
+  ngOnInit(): void {
+
+  }
+
+
 
 }
