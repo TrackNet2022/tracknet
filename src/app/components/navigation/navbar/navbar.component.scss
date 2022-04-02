@@ -32,9 +32,11 @@ nav {
             left: 0;
         }
 
-        &:hover:after {
-            width: 100%;
-        }
+
+    }
+
+    &:hover  span::after {
+        width: 100%;
     }
 }
 
