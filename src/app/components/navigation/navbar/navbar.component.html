@@ -1,1 +1,33 @@
-<p>navbar works!</p>
+<nav class="navbar">
+    <ul class="navbar-menu">
+        <li class="navbar-item">
+            <a class="navbar-link"
+                href="#">
+                <fa-icon [icon]="faHouse"></fa-icon>
+  
+                Inicio
+            </a>
+        </li>
+        <li>
+            <a class="navbar-link"
+                href="#"
+                id="search">
+                <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Búsqueda
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <fa-icon [icon]="faPlus"></fa-icon>
+                Mi lista
+            </a>
+        </li>
+    </ul>
+    <form>
+        <input id="search-box"
+            type="search"
+            class="search-input hidden"
+            placeholder="Buscar...">
+    </form>
+</nav>
