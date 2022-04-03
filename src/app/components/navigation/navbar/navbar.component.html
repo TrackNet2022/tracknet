@@ -1,0 +1,33 @@
+<nav class="navbar">
+    <ul class="navbar-menu">
+        <li class="navbar-item">
+            <a class="navbar-link"
+                href="#">
+                <fa-icon [icon]="faHouse"></fa-icon>
+                <span>Inicio</span>
+            </a>
+        </li>
+        <li>
+            <a class="navbar-link"
+                href="#"
+                (click)="toggleSearchBox()"
+                id="search">
+                <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Búsqueda</span>
+            </a>
+        </li>
+        <li>
+            <a class="navbar-link" href="#">
+                <fa-icon [icon]="faPlus"></fa-icon>
+                <span>Mi lista</span>
+            </a>
+        </li>
+    </ul>
+    <form>
+        <input id="search-box"
+            type="search"
+            class="search-input hidden"
+            placeholder="Buscar...">
+    </form>
+</nav>
