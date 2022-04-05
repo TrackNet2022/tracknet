@@ -16,8 +16,7 @@ pipeline {
       steps {
 
         sshagent (credentials: ['tracknet-server']) {          
-          sh 'ssh g6ander00@34.76.211.128 rm -rf /var/www/html/*'
-          sh 'scp -r dist g6ander00@34.76.211.128:/var/www/html/dist'
+            sh 'ssh -o StrictHostKeyChecking=no -l g6ander00 34.76.211.128'
         }
 
       }
