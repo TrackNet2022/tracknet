@@ -14,7 +14,8 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'echo "deploy xd"'
+        sh 'ssh g6ander00@34.76.211.128 rm -rf /var/www/html/*'
+        sh 'scp -r dist g6ander00@34.76.211.128:/var/www/html/dist'
       }
     }
   }
