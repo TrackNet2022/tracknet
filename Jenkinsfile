@@ -1,6 +1,6 @@
 node {
     stage('Checkout SCM') {
-        git branch: 'main', url: 'git@github.com:tracknet2022/tracknet.git'
+        git branch: 'main', url: 'https://github.com/TrackNet2022/tracknet.git'
     }
 
     stage('Install') {
