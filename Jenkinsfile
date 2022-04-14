@@ -2,7 +2,7 @@ node {
 
 
   stage('Install') {
-     git branch: 'main', url: 'git@github.com:TrackNet2022/tracknet.git'
+     sh "git pull"
   }
 
 
