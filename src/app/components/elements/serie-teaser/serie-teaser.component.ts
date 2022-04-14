@@ -12,6 +12,7 @@ export class SerieTeaserComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
