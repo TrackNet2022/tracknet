@@ -13,6 +13,7 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { ListPageComponent } from './components/pages/list-page/list-page.component';
 import { CalendarElementComponent } from './components/elements/calendar-element/calendar-element.component';
 import { FavoriteCategoriesElementComponent } from './components/elements/favorite-categories-element/favorite-categories-element.component';
+import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,13 @@ import { FavoriteCategoriesElementComponent } from './components/elements/favori
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
-  providers: [],
+  providers: [
+ 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

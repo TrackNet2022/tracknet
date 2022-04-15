@@ -1,12 +1,17 @@
-@import '~normalize.css';
+@import "~normalize.css";
 
 * {
     font-family: sans-serif;
 }
-body, html{
+body,
+html {
     height: 100%;
 }
 body {
     background-color: rgb(26, 29, 41);
 }
 
+.container {
+    max-width: 100%;
+    padding: 0 1rem;
+}
