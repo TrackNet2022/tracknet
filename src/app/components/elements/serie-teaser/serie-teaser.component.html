@@ -1,16 +1,17 @@
 <div class="serie-teaser">
-    <img src="https://es.web.img3.acsta.net/pictures/18/04/04/22/52/3191575.jpg"
-        alt="brba">
-    <div class="serie-teaser-options">
-        <a href="#">
-            <fa-stack>
-                <fa-icon [icon]="faCircle"
-                    [inverse]="true"
-                    stackItemSize="1x"></fa-icon>
-                <fa-icon [icon]="faPlus"
-                    stackItemSize="1x"></fa-icon>
-            </fa-stack>
-
-        </a>
-    </div>
+    <a  [routerLink]="['/serie', serieData.id]" >
+        <img src="https://image.tmdb.org/t/p/w500/{{serieData.poster_path}}"
+            alt="{{serieData.title}}">
+        <div class="serie-teaser-options">
+            <a href="#">
+                <fa-stack>
+                    <fa-icon [icon]="faCircle"
+                        [inverse]="true"
+                        stackItemSize="1x"></fa-icon>
+                    <fa-icon [icon]="faPlus"
+                        stackItemSize="1x"></fa-icon>
+                </fa-stack>
+            </a>
+        </div>
+    </a>
 </div>

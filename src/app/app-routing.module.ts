@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { ListPageComponent } from './components/pages/list-page/list-page.component';
+import { SerieDetailComponent } from './components/pages/serie-detail/serie-detail.component';
 
 const routes: Routes = [
-  { path: 'my-list', component: ListPageComponent},
-  { path: 'home', component: HomePageComponent}
+  { path: '', component: HomePageComponent },
+  { path: 'my-list', component: ListPageComponent },
+  { path: 'home', component: HomePageComponent },
+  { path: 'serie/:id', component: SerieDetailComponent },
+  { path: '**', component: HomePageComponent }, 
 ];
 
 @NgModule({

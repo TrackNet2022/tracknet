@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faPlus, faCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,10 +9,14 @@ import { faPlus, faCircle } from '@fortawesome/free-solid-svg-icons';
 export class SerieTeaserComponent implements OnInit {
   faPlus = faPlus
   faCircle = faCircle
-  constructor() { }
+  @Input() serieData: any;
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
-    
+    console.log(this.serieData)
   }
 
 }

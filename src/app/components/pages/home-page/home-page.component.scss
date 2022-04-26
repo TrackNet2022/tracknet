@@ -1,0 +1,7 @@
+.serie {
+    &-grid {
+        display: flex;
+        gap: 1rem;
+        flex-flow: row wrap;
+    }
+}
