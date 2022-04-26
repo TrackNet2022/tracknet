@@ -2,10 +2,11 @@ export interface Serie {
     sid: number;
     title: string;
     description: string;
-    state: string;
+    status: string;
     cid: number;
     start_date: number;
-    chapter_count: number;
+    number_of_episodes: number;
     frecuency: string;
     file_path: string;
+    number_of_seasons : number
 }

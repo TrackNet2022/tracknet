@@ -4,6 +4,8 @@ import { HttpClient } from "@angular/common/http";
 // Importo map reactive extentions
 import { map } from "rxjs/operators";
 import { environment } from "src/environments/environment";
+import { Observable } from "rxjs";
+import { Serie } from "../models/serie";
 
 @Injectable({
     providedIn: "root"
@@ -35,16 +37,26 @@ export class MoviedbService {
                 next: (v: any) => console.log(v.posters[0].file_path),
                 error: (e) => console.error(e),
                 complete: () => console.info('complete'),
-                
             }
         )
-        
-        console.log();
-}
+
+    }
 
 
+    getDiscoverSeries() {
+        const url = `${this.urlMoviedb}/discover/tv?sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
+        return this.http.jsonp(url, 'callback=JSONP_CALLBACK')
+
+    }
+
+    getSerieDetail(serieId: number) {
+        const url = `${this.urlMoviedb}/tv/${serieId}?api_key=${this.apikey}&language=es`;
+        let serieData: Serie;
 
 
+        return this.http.jsonp(url, 'callback=JSONP_CALLBACK');
+
+    }
 
 
     // Otra alternativa para hacer la peticion

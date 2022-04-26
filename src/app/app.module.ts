@@ -14,6 +14,7 @@ import { ListPageComponent } from './components/pages/list-page/list-page.compon
 import { CalendarElementComponent } from './components/elements/calendar-element/calendar-element.component';
 import { FavoriteCategoriesElementComponent } from './components/elements/favorite-categories-element/favorite-categories-element.component';
 import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
+import { SerieDetailComponent } from './components/pages/serie-detail/serie-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
     LoginPageComponent,
     ListPageComponent,
     CalendarElementComponent,
-    FavoriteCategoriesElementComponent
+    FavoriteCategoriesElementComponent,
+    SerieDetailComponent,
   ],
   imports: [
     BrowserModule,

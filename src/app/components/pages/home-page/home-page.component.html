@@ -1,1 +1,5 @@
-<p>home-page works!</p>
+<div class="serie-grid">
+    <serie-teaser *ngFor="let serie of series; index as i"
+        [serieData]="serie">
+    </serie-teaser>
+</div>
