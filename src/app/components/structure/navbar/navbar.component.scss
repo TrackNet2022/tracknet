@@ -1,19 +1,27 @@
-nav {
-    padding: 1.5rem;
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    
 }
 
+
 .navbar-menu {
-    list-style: none;
     display: flex;
+    padding: 1.5rem;
+    list-style: none;
     gap: 1.5rem;
     font-size: 0.75rem;
     letter-spacing: 2px;
+    position: relative;
+    border-bottom: 1px solid black;
 }
 
 .navbar-link {
     font-weight: bold;
     color: white;
-
     text-decoration: none;
     text-transform: uppercase;
 
@@ -46,7 +54,7 @@ fa-icon {
 .search-input {
     position: fixed;
     display: none;
-    top: 100px;
+    top: 4.5rem;
     left: 0;
     width: 100vw;
     background-color: rgb(75, 78, 90);
@@ -57,6 +65,7 @@ fa-icon {
     caret-color: white;
     color: white;
     transform: scale(0);
+    z-index: 9;
 
     &::placeholder {
         color: whitesmoke;
@@ -70,24 +79,23 @@ fa-icon {
 
 @keyframes anim {
     0% {
-      display: none;
-      opacity: 0;
+        display: none;
+        opacity: 0;
     }
     1% {
-      display: block;
-      opacity: 0;
-      transform: scale(0);
+        display: block;
+        opacity: 0;
+        transform: scale(0);
     }
     100% {
-      opacity: 1;
-      transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
     }
-  }
-
+}
 
 .active {
     display: block;
     opacity: 1;
-    animation: anim .1s ease-in-out;
+    animation: anim 0.1s ease-in-out;
     transform: scale(1);
 }
