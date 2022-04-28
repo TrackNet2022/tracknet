@@ -44,15 +44,17 @@ export class MoviedbService {
 
 
     getDiscoverSeries() {
-        const url = `${this.urlMoviedb}/discover/tv?sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
-        return this.http.jsonp(url, 'callback=JSONP_CALLBACK')
-
+    // const url = `${this.urlMoviedb}/discover/tv?sort_by=popularity.desc&api_key=${this.apikey}&language=es&with_watch_providers=8|9|337|384&watch_region=ES&page=1`;
+    //     return this.http.jsonp(url, 'callback=JSONP_CALLBACK')
+    const url = 'http://api.tracknet.one:3000/api/discover';
+        return this.http.get(url)
     }
 
     getSerieDetail(serieId: number) {
-        const url = `${this.urlMoviedb}/tv/${serieId}?api_key=${this.apikey}&language=es`;
-        let serieData: Serie;
-
+        // const url = `${this.urlMoviedb}/tv/${serieId}?api_key=${this.apikey}&language=es`;
+        // let serieData: Serie;
+        const url = 'http://api.tracknet.one:3000/api/serie/'+ serieId;
+        return this.http.get(url)
 
         return this.http.jsonp(url, 'callback=JSONP_CALLBACK');
 
