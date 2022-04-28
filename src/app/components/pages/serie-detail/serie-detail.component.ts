@@ -17,7 +17,7 @@ export class SerieDetailComponent implements OnInit {
       _moviedb.getSerieDetail(params['id']).subscribe(
         {
           next: (v: any) => {
-            let { id, name, poster_path, number_of_seasons, number_of_episodes, first_air_date, season_number, overview, status, next_episode_to_air } = v
+            let { id, name, poster_path, number_of_seasons, number_of_episodes, first_air_date, season_number, overview, status, next_episode_to_air } = v.data
             this.serie = {
               sid: id,
               cid: 1,
