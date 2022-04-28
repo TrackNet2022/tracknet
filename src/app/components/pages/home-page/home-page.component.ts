@@ -13,10 +13,11 @@ export class HomePageComponent implements OnInit {
   constructor(_moviedb: MoviedbService) {
     _moviedb.getDiscoverSeries().subscribe(
       {
-        next: (v: any) => this.series = v.results,
+        next: (v: any) => this.series = v,
         error: (e) => console.error(e),
     }
     )
+
   }
 
   ngOnInit(): void {
