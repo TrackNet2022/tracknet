@@ -1,27 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { MoviedbService } from 'src/app/services/moviedb.service';
+import { Component } from '@angular/core'
+import { SerieService } from 'src/app/services/serie.service'
 
 @Component({
   selector: 'home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
-
+export class HomePageComponent {
   series: any = []
 
-  constructor(_moviedb: MoviedbService) {
-    _moviedb.getDiscoverSeries().subscribe(
-      {
-        next: (v: any) => this.series = v,
-        error: (e) => console.error(e),
-    }
-    )
-
+  constructor(_serieService: SerieService) {
+    _serieService.getDiscoverSeries().subscribe({
+      next: (v: any) => (this.series = v),
+      error: (e) => console.error(e)
+    })
   }
-
-  ngOnInit(): void {
-
-  }
-
 }
