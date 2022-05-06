@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "compodoc": "compodoc -p tsconfig.app.json -s --port=4040",
+    "compodoc": "compodoc -p tsconfig.doc.json -s --port=4040",
     "lint": "eslint */**/*.{js,ts,tsx} --quiet --fix"
   },
   "private": true,
