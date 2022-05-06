@@ -2,21 +2,22 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Serie } from 'src/app/models/serie'
 import { MoviedbService } from 'src/app/services/moviedb.service'
+import { SerieService } from 'src/app/services/serie.service'
 
 @Component({
   selector: 'serie-detail',
   templateUrl: './serie-detail.component.html',
   styleUrls: ['./serie-detail.component.scss']
 })
-export class SerieDetailComponent implements OnInit {
+export class SerieDetailComponent {
   serie?: Serie
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    _moviedb: MoviedbService
+    _serieService: SerieService
   ) {
     this.activatedRoute.params.subscribe((params) => {
-      _moviedb.getSerieDetail(params['id']).subscribe({
+      _serieService.getSerieDetail(params['id']).subscribe({
         next: (v: any) => {
           const {
             id,
@@ -49,6 +50,4 @@ export class SerieDetailComponent implements OnInit {
       console.log(params['id'])
     })
   }
-
-  ngOnInit(): void {}
 }
