@@ -24,4 +24,9 @@ export class MoviedbService {
 
     return this.http.jsonp(url, 'callback')
   }
+
+  searchSerieByName(searchTerms: string) {
+    const url = `${this.urlMoviedb}/search/tv?query=${searchTerms}&api_key=${this.apikey}&language=es`
+    return this.http.jsonp(url, 'callback=JSONP_CALLBACK')
+  }
 }
