@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component } from '@angular/core'
 import { Serie } from 'src/app/models/serie'
-import { MoviedbService } from 'src/app/services/moviedb.service'
 import { SerieService } from 'src/app/services/serie.service'
 
 @Component({
@@ -12,7 +11,7 @@ import { SerieService } from 'src/app/services/serie.service'
 export class HomePageComponent {
   series: Serie[] = []
 
-  constructor(_serieService: SerieService, _moviedb: MoviedbService) {
+  constructor(_serieService: SerieService) {
     _serieService.getDiscoverSeries().subscribe({
       next: (v: Serie[]) => (this.series = v),
       error: (e) => console.error(e),
