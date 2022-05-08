@@ -18,7 +18,6 @@ export class SearchPageComponent {
 
   onChange(searchTerm: string) {
     if (searchTerm.length > 3) {
-      console.log(this.searchTerm)
       this.resultSeries = this.search()
     }
   }
