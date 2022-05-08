@@ -1,0 +1,8 @@
+.series-list {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: minmax(min-content, max-content);
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+
+
+}

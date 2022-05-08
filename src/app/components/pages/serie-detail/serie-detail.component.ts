@@ -19,9 +19,8 @@ export class SerieDetailComponent {
       _serieService.getSerieDetail(params['id']).subscribe({
         next: (v) => (this.data = v.data),
         error: (e) => console.error(e),
-        complete: () => console.info('complete')
+        complete: () => console.log(this.data?.next_episode_to_air)
       })
-      console.log(params['id'])
     })
   }
 }
