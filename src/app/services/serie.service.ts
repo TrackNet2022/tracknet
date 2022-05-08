@@ -16,7 +16,7 @@ export class SerieService {
    * @returns URL completa
    */
   getQuery(path: string) {
-    const url = `http://api.tracknet.one:3000${path}`
+    const url = `https://api.tracknet.one${path}`
 
     // Si la peticion se hace con http.get da error porque moviedb no acepta cross domain
     //por eso es importante verificar el uso de jsonp para poder hacer solicitud a otros dominios
