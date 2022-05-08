@@ -1,0 +1,13 @@
+<form>
+    <input id="search-box"
+        type="search"
+        class="search-input"
+        placeholder="Buscar..."
+        name="searhTerm"
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="onChange($event)">
+</form>
+
+<series-list [series]="resultSeries">
+
+</series-list>

@@ -1,0 +1,29 @@
+.search-input {
+    width: 100%;
+    background-color: rgb(75, 78, 90);
+    height: 100px;
+    padding-left: calc(3.5vw + 24px);
+    font-size: 2rem;
+    border: 0;
+    caret-color: white;
+    color: white;
+
+    z-index: 9;
+
+    &::placeholder {
+        color: whitesmoke;
+    }
+
+    &:focus {
+        border: 0;
+        outline: 0;
+    }
+}
+
+.serie {
+    &-grid {
+        display: flex;
+        gap: 1rem;
+        flex-flow: row wrap;
+    }
+}
