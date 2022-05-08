@@ -18,6 +18,8 @@ import { SerieDetailComponent } from './components/pages/serie-detail/serie-deta
 import { SearchPageComponent } from './components/pages/search-page/search-page.component'
 import { SeriesListComponent } from './components/shared/series-list/series-list.component'
 import { FormsModule } from '@angular/forms'
+import { CalendarModule, DateAdapter } from 'angular-calendar'
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
 
 @NgModule({
   declarations: [
@@ -40,7 +42,11 @@ import { FormsModule } from '@angular/forms'
     FontAwesomeModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    FormsModule
+    FormsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
