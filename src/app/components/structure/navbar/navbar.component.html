@@ -1,15 +1,17 @@
 <nav class="navbar">
     <ul class="navbar-menu">
         <li class="navbar-item">
-            <a class="navbar-link" routerLink="/home" routerLinkActive="active">
+            <a class="navbar-link"
+                routerLink="/home"
+                routerLinkActive="active">
                 <fa-icon [icon]="faHouse"></fa-icon>
                 <span>Inicio</span>
             </a>
         </li>
         <li>
             <a class="navbar-link"
-                href="#"
-                (click)="toggleSearchBox()"
+                routerLink="/search"
+                routerLinkActive="active"
                 id="search">
                 <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -17,7 +19,9 @@
             </a>
         </li>
         <li>
-            <a class="navbar-link" routerLink="/my-list" routerLinkActive="active">
+            <a class="navbar-link"
+                routerLink="/my-list"
+                routerLinkActive="active">
                 <fa-icon [icon]="faPlus"></fa-icon>
                 <span>Mi lista</span>
             </a>
