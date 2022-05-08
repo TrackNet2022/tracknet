@@ -14,8 +14,8 @@ import { ListPageComponent } from './components/pages/list-page/list-page.compon
 import { CalendarElementComponent } from './components/elements/calendar-element/calendar-element.component'
 import { FavoriteCategoriesElementComponent } from './components/elements/favorite-categories-element/favorite-categories-element.component'
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http'
-import { SerieDetailComponent } from './components/pages/serie-detail/serie-detail.component';
-import { SearchPageComponent } from './components/pages/search-page/search-page.component';
+import { SerieDetailComponent } from './components/pages/serie-detail/serie-detail.component'
+import { SearchPageComponent } from './components/pages/search-page/search-page.component'
 import { SeriesListComponent } from './components/shared/series-list/series-list.component'
 import { FormsModule } from '@angular/forms'
 
