@@ -1,7 +1,7 @@
 <div class="serie-teaser">
-    <a  [routerLink]="['/serie', serieData.id]" >
-        <img src="https://image.tmdb.org/t/p/w500/{{serieData.poster_path}}"
-            alt="{{serieData.title}}">
+    <a  [routerLink]="['/serie', serieData?.id]" >
+        <img src="https://image.tmdb.org/t/p/w500/{{serieData?.poster_path}}"
+            alt="{{serieData?.name}}">
         <div class="serie-teaser-options">
             <a href="#">
                 <fa-stack>

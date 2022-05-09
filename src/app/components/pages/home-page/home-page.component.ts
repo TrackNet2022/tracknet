@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component } from '@angular/core'
+import { Serie } from 'src/app/models/serie'
 import { SerieService } from 'src/app/services/serie.service'
 
 @Component({
@@ -7,12 +9,13 @@ import { SerieService } from 'src/app/services/serie.service'
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
-  series: any = []
+  series: Serie[] = []
 
   constructor(_serieService: SerieService) {
     _serieService.getDiscoverSeries().subscribe({
-      next: (v: any) => (this.series = v),
-      error: (e) => console.error(e)
+      next: (v: Serie[]) => (this.series = v),
+      error: (e) => console.error(e),
+      complete: () => console.log(this.series)
     })
   }
 }

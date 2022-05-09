@@ -1,0 +1,30 @@
+.info-box {
+    display: grid;
+    justify-content: start;
+    gap: 1rem;
+    grid-auto-rows: auto;
+    grid-template-areas: "cover data data";
+
+    &-title {
+        h1 {
+            font-size: 3rem;
+
+            span {
+                color: #8a8d98;
+                font-size: 2rem;
+            }
+        }
+    }
+    &-cover {
+        grid-area: cover;
+    }
+    &-data {
+        grid-area: data;
+    }
+
+    &-overview {
+        h2 {
+            color: #8a8d98;
+        }
+    }
+}
