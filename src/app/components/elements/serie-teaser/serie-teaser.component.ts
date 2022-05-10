@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { faPlus, faCircle } from '@fortawesome/free-solid-svg-icons'
 import { Serie } from 'src/app/models/serie'
 import { LocalStorageService } from 'src/app/services/local-storage.service'

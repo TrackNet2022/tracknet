@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core'
-import { BehaviorSubject } from 'rxjs'
-import { UserList } from '../models/user-list'
-import { LocalStorageRefService } from './local-storage-ref.service'
 
 @Injectable({
   providedIn: 'root'
