@@ -1,8 +1,5 @@
 .navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 9;
+
     width: 100%;
     
 }
@@ -52,7 +49,6 @@ fa-icon {
 }
 
 .search-input {
-    position: fixed;
     display: none;
     top: 4.5rem;
     left: 0;
