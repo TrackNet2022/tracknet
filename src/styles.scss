@@ -7,11 +7,16 @@
 @import "~bootstrap/scss/reboot";
 
 @import "~bootstrap/scss/containers";
-@import "~bootstrap/scss/grid"; 
+@import "~bootstrap/scss/grid";
 
 @import "~bootstrap/scss/utilities"; // Configures the utility classes that should be generated
 @import "~bootstrap/scss/utilities/api"; // Generates the actual utility classes
 
+// @include media-breakpoint-up(sm) {  }
+// @include media-breakpoint-up(md) {  }
+// @include media-breakpoint-up(lg) {  }
+// @include media-breakpoint-up(xl) {  }
+// @include media-breakpoint-up(xxl) {  }
 
 * {
     font-family: sans-serif;
