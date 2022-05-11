@@ -1,30 +1,41 @@
-<div class="info-box">
-
-    <div class="info-box-cover">
-
-        <img class="rounded"
-            src="https://image.tmdb.org/t/p/w500/{{data?.poster_path}}"
-            alt="{{data?.name}}">
+<div class="container">
+  <div class="info-box row">
+    <div class="info-box-cover col-lg-4">
+      <img
+        class="rounded"
+        src="https://image.tmdb.org/t/p/w500/{{ data?.poster_path }}"
+        alt="{{ data?.name }}"
+      />
     </div>
-    <div class="info-box-data">
-        <div class="info-box-overview">
-            <div class="info-box-title">
-                <h1>{{data?.name}} <span>({{data?.first_air_date | date: 'yyyy'}})</span></h1>
-            </div>
-            <div class="info-box-description">
-                <h2>Sipnosis</h2>
-                <p>
-                    {{data?.overview}}
-                </p>
-            </div>
-            <div class="info-box-next">
-                <h2>Próximo episodio:</h2>
-                <p>
-                    {{data?.next_episode_to_air?.season_number}}x{{data?.next_episode_to_air?.episode_number}} - 
-                    {{data?.next_episode_to_air?.air_date | date: 'dd/MM/yyyy' }}
-                </p>
-            </div>
+  
+    <div class="info-box-data col-lg-8">
+      <div class="info-box-overview">
+        <div class="info-box-title">
+          <h1>
+            {{ data?.name }}
+            <span>({{ data?.first_air_date | date: 'yyyy' }})</span>
+            <a title="Añadir a mi lista" (click)="saveToList(data?.id ?? 0)" [style.color]="added ? '#007785' : 'white'">
+              <fa-icon [icon]="faBookmark"> </fa-icon>
+            </a>
+          </h1>
         </div>
+        <div class="info-box-description" *ngIf="data?.overview">
+          <h2>Sipnosis</h2>
+          <p>
+            {{ data?.overview }}
+          </p>
+        </div>
+        <div class="info-box-next" *ngIf="data?.next_episode_to_air">
+          <h2>Próximo episodio:</h2>
+          <p>
+            T{{ data?.next_episode_to_air?.season_number }} E{{
+              data?.next_episode_to_air?.episode_number
+            }}
+            -
+            {{ data?.next_episode_to_air?.air_date | date: 'dd/MM/yyyy' }}
+          </p>
+        </div>
+      </div>
     </div>
-
+  </div>
 </div>
