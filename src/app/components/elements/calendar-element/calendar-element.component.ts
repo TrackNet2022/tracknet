@@ -51,7 +51,7 @@ export class CalendarElementComponent implements OnInit {
   }
 
   fetchEvents(): void {
-    const getStart: any = {
+    const getStart = {
       month: startOfMonth,
       week: startOfWeek,
       day: startOfDay
@@ -71,11 +71,15 @@ export class CalendarElementComponent implements OnInit {
           .pipe(map((response) => response.data))
       })
       this.events$ = combineLatest<CalendarEvent[]>(requestList).pipe(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         map((series: any) => {
           return series.map((serie: Serie) => {
             return {
               title: serie.name,
-              start: new Date(),
+              start: new Date(
+                serie.next_episode_to_air?.air_date +
+                  getTimezoneOffsetString(this.viewDate)
+              ),
               allDay: true,
               meta: {
                 serie
