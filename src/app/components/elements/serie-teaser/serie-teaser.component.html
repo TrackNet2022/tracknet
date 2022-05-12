@@ -1,20 +1,13 @@
 <div class="serie-teaser">
-    <img src="https://image.tmdb.org/t/p/w500/{{serieData?.poster_path}}"
-        alt="{{serieData?.name}}">
+  <img
+    src="https://image.tmdb.org/t/p/w500/{{ serieData?.poster_path }}"
+    alt="{{ serieData?.name }}"
+  />
 
-    <div class="serie-teaser-options">
-        <a (click)="saveToList(serieData?.id ?? 0)">
-            <fa-stack>
-                <fa-icon [icon]="faCircle"
-                    [inverse]="true"
-                    stackItemSize="1x"></fa-icon>
-                <fa-icon [icon]="faPlus"
-                    stackItemSize="1x"></fa-icon>
-            </fa-stack>
-        </a>
-        <a class="serie-teaser-detail" [routerLink]="['/serie', serieData?.id]">
-            Ver detalle
-        </a>
-    </div>
-    
+  <div class="serie-teaser-options">
+    <add-to-list-button [serieId]="serieData?.id ?? 0"></add-to-list-button>
+    <a class="serie-teaser-detail" [routerLink]="['/serie', serieData?.id]">
+      Ver detalle
+    </a>
+  </div>
 </div>
