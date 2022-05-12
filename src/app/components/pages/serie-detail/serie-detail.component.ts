@@ -25,7 +25,7 @@ export class SerieDetailComponent {
         error: (e) => console.error(e),
         complete: () => {
           const userList: number[] = this._localStorageService.getItem('data')
-          if (userList.includes(this.data?.id ?? 0)) {
+          if (userList && userList.includes(this.data?.id ?? 0)) {
             this.added = true
           }
         }
@@ -35,6 +35,7 @@ export class SerieDetailComponent {
 
   saveToList(id: number) {
     const currentData: number[] = this._localStorageService.getItem('data')
+    console.log(currentData)
     if (currentData && !currentData.includes(id)) {
       currentData.push(id)
       this._localStorageService.setItem('data', currentData)
@@ -43,6 +44,8 @@ export class SerieDetailComponent {
         'data',
         currentData.filter((e) => e != id)
       )
+    } else {
+      this._localStorageService.setItem('data', [id])
     }
     this.added = !this.added
   }

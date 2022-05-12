@@ -16,9 +16,6 @@
                 transition: 0.3s;
                 cursor: pointer;
 
-                &:hover {
-                    color: #007785;
-                }
             }
         }
     }
@@ -40,4 +37,8 @@
             color: #8a8d98;
         }
     }
+}
+
+.active {
+    color: #007785;
 }

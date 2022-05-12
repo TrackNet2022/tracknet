@@ -7,15 +7,16 @@
         alt="{{ data?.name }}"
       />
     </div>
-  
+
     <div class="info-box-data col-lg-8">
       <div class="info-box-overview">
         <div class="info-box-title">
           <h1>
             {{ data?.name }}
             <span>({{ data?.first_air_date | date: 'yyyy' }})</span>
-            <a title="Añadir a mi lista" (click)="saveToList(data?.id ?? 0)" [style.color]="added ? '#007785' : 'white'">
-              <fa-icon [icon]="faBookmark"> </fa-icon>
+            <a title="Añadir a mi lista" (click)="saveToList(data?.id ?? 0)">
+              <fa-icon [icon]="faBookmark" [ngClass]="{ 'active': added }">
+              </fa-icon>
             </a>
           </h1>
         </div>
