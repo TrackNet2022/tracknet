@@ -1,9 +1,5 @@
 .info-box {
-    display: grid;
-    justify-content: start;
-    gap: 1rem;
-    grid-auto-rows: auto;
-    grid-template-areas: "cover data data";
+
 
     &-title {
         h1 {
@@ -13,11 +9,25 @@
                 color: #8a8d98;
                 font-size: 2rem;
             }
+
+            fa-icon {
+                margin-left: 1rem;
+                font-size: 1.5rem;
+                transition: 0.3s;
+                cursor: pointer;
+
+            }
         }
     }
+
     &-cover {
         grid-area: cover;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
     }
+
     &-data {
         grid-area: data;
     }
@@ -27,4 +37,8 @@
             color: #8a8d98;
         }
     }
+}
+
+.active {
+    color: #007785;
 }

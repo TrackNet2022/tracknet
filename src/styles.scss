@@ -8,11 +8,16 @@
 @import "~bootstrap/scss/reboot";
 
 @import "~bootstrap/scss/containers";
-@import "~bootstrap/scss/grid"; 
+@import "~bootstrap/scss/grid";
 
 @import "~bootstrap/scss/utilities"; 
 @import "~bootstrap/scss/utilities/api"; 
 
+// @include media-breakpoint-up(sm) {  }
+// @include media-breakpoint-up(md) {  }
+// @include media-breakpoint-up(lg) {  }
+// @include media-breakpoint-up(xl) {  }
+// @include media-breakpoint-up(xxl) {  }
 
 * {
     font-family: sans-serif;
