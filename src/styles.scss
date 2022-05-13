@@ -1,4 +1,5 @@
 @import "~normalize.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
@@ -9,8 +10,8 @@
 @import "~bootstrap/scss/containers";
 @import "~bootstrap/scss/grid";
 
-@import "~bootstrap/scss/utilities"; // Configures the utility classes that should be generated
-@import "~bootstrap/scss/utilities/api"; // Generates the actual utility classes
+@import "~bootstrap/scss/utilities"; 
+@import "~bootstrap/scss/utilities/api"; 
 
 // @include media-breakpoint-up(sm) {  }
 // @include media-breakpoint-up(md) {  }

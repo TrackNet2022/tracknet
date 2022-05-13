@@ -9,8 +9,9 @@ export class LocalStorageService {
     return item ? JSON.parse(item) : null
   }
 
-  setItem(key: string, value: any): void {
+  setItem(key: string, value: unknown): void {
     localStorage.setItem(key, JSON.stringify(value))
+    console.log(value)
   }
 
   removeItem(key: string): void {

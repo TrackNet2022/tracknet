@@ -1,6 +1,4 @@
 .info-box {
-
-
     &-title {
         h1 {
             font-size: 3rem;
@@ -8,17 +6,6 @@
             span {
                 color: #8a8d98;
                 font-size: 2rem;
-            }
-
-            fa-icon {
-                margin-left: 1rem;
-                font-size: 1.5rem;
-                transition: 0.3s;
-                cursor: pointer;
-
-                &:hover {
-                    color: #007785;
-                }
             }
         }
     }

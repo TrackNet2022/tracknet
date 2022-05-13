@@ -7,16 +7,14 @@
         alt="{{ data?.name }}"
       />
     </div>
-  
+
     <div class="info-box-data col-lg-8">
       <div class="info-box-overview">
         <div class="info-box-title">
           <h1>
             {{ data?.name }}
             <span>({{ data?.first_air_date | date: 'yyyy' }})</span>
-            <a title="Añadir a mi lista" (click)="saveToList(data?.id ?? 0)" [style.color]="added ? '#007785' : 'white'">
-              <fa-icon [icon]="faBookmark"> </fa-icon>
-            </a>
+            <add-to-list-button [icon]="faBookmark" [serieId]="data?.id ?? 0"></add-to-list-button>
           </h1>
         </div>
         <div class="info-box-description" *ngIf="data?.overview">
