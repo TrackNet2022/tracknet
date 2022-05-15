@@ -1,0 +1,19 @@
+h2 {
+    color: white;
+}
+
+a {
+    background-color: #188580;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+    fa-icon {
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken(#188580, 5%);
+    }
+}

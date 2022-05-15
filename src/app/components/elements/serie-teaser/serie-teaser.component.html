@@ -1,4 +1,4 @@
-<div class="serie-teaser">
+<div class="serie-teaser" *ngIf="serieData">
   <img
     src="https://image.tmdb.org/t/p/w500/{{ serieData?.poster_path }}"
     alt="{{ serieData?.name }}"

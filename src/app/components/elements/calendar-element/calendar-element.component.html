@@ -1,5 +1,5 @@
 <div *ngIf="events$ | async; let events">
-  <div [ngSwitch]="view">
+  <div [ngSwitch]="view" class="calendar">
     <mwl-calendar-month-view
       *ngSwitchCase="'month'"
       [viewDate]="viewDate"
