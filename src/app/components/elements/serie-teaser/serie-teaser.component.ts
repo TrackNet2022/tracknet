@@ -15,15 +15,4 @@ export class SerieTeaserComponent {
   @Input() serieData: Serie | null = null
 
   constructor(private _localStorageService: LocalStorageService) {}
-
-  saveToList(id: number) {
-    const currentData: number[] = this._localStorageService.getItem('data')
-    if (currentData && !currentData.includes(id)) {
-      currentData.push(id)
-      this._localStorageService.setItem('data', currentData)
-    } else {
-      this._localStorageService.setItem('data', [id])
-    }
-    console.log(currentData)
-  }
 }
