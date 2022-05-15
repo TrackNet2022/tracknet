@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http'
 
 // Importo map reactive extentions
 import { Observable } from 'rxjs'
+import { Serie } from '../models/serie'
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,6 @@ export class SerieService {
    */
   getSerieDetail(serieId: number): Observable<any> {
     const query = this.getQuery(`/api/serie/${serieId}`)
-    return this.http.get(query)
+    return this.http.get<Serie>(query)
   }
 }

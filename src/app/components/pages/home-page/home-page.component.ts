@@ -14,8 +14,7 @@ export class HomePageComponent {
   constructor(_serieService: SerieService) {
     _serieService.getDiscoverSeries().subscribe({
       next: (v: Serie[]) => (this.series = v),
-      error: (e) => console.error(e),
-      complete: () => console.log(this.series)
+      error: (e) => console.error(e)
     })
   }
 }
