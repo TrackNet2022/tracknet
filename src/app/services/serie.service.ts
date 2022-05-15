@@ -42,4 +42,9 @@ export class SerieService {
     const query = this.getQuery(`/api/serie/${serieId}`)
     return this.http.get<Serie>(query)
   }
+
+  searchByTerm(term: string): Observable<any> {
+    const query = this.getQuery(`/api/search?term=${term}`)
+    return this.http.get<Serie[]>(query)
+  }
 }
