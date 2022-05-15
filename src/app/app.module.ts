@@ -19,9 +19,10 @@ import { SearchPageComponent } from './components/pages/search-page/search-page.
 import { SeriesListComponent } from './components/shared/series-list/series-list.component'
 import { FormsModule } from '@angular/forms'
 import { CalendarModule, DateAdapter } from 'angular-calendar'
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
 import { AddToListButtonComponent } from './components/shared/add-to-list-button/add-to-list-button.component'
-
+import { ToastrModule } from 'ngx-toastr'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { AddToListButtonComponent } from './components/shared/add-to-list-button
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
@@ -48,7 +50,8 @@ import { AddToListButtonComponent } from './components/shared/add-to-list-button
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    })
+    }),
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
