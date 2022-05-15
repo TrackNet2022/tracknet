@@ -19,7 +19,7 @@ import { SearchPageComponent } from './components/pages/search-page/search-page.
 import { SeriesListComponent } from './components/shared/series-list/series-list.component'
 import { FormsModule } from '@angular/forms'
 import { CalendarModule, DateAdapter } from 'angular-calendar'
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
 import { AddToListButtonComponent } from './components/shared/add-to-list-button/add-to-list-button.component'
 
 @NgModule({
