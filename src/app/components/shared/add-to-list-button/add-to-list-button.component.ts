@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { LocalStorageService } from 'src/app/services/local-storage.service'
 import { faBookmark, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'add-to-list-button',
@@ -12,7 +13,10 @@ export class AddToListButtonComponent implements OnInit {
   @Input() serieId = 0
 
   status = false
-  constructor(private _localStorage: LocalStorageService) {}
+  constructor(
+    private _localStorage: LocalStorageService,
+    private toastr: ToastrService
+  ) {}
   ngOnInit(): void {
     const list: number[] = this._localStorage.getItem('data')
     if (list && list.includes(this.serieId)) {
@@ -35,5 +39,14 @@ export class AddToListButtonComponent implements OnInit {
       this._localStorage.setItem('data', [id])
     }
     this.status = !this.status
+    if (this.status) {
+      this.toastr.success('Añadido a la lista', '', {
+        timeOut: 2000
+      })
+    } else {
+      this.toastr.warning('Borrado de la lista', '', {
+        timeOut: 2000
+      })
+    }
   }
 }
