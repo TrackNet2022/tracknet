@@ -1,1 +1,19 @@
-<calendar-element></calendar-element>
+<div class="col-lg-12 d-flex justify-content-end">
+  <a class="btn btn-primary" (click)="onClick()">
+    <fa-icon [icon]="faCalendar"></fa-icon>
+  </a>
+</div>
+
+<div [ngSwitch]="actualView">
+  <div ngClass="col-lg-12" *ngSwitchCase="'list'">
+    <h2>Tus series:</h2>
+    <div *ngIf="userSerieList$ | async; let seriotas">
+      <series-list [series]="seriotas"> </series-list>
+    </div>
+    <h2>Tus proximos capítulos:</h2>
+    <div *ngIf="userNextEpisodes$ | async; let seriotas">
+      <series-list [series]="seriotas"> </series-list>
+    </div>
+  </div>
+  <calendar-element *ngSwitchCase="'calendar'"> </calendar-element>
+</div>
