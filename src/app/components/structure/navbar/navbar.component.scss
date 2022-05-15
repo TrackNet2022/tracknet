@@ -13,7 +13,8 @@
     font-size: 0.75rem;
     letter-spacing: 2px;
     position: relative;
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid darken(#1a1d29, 3%);
+    box-shadow: 0 4px 2px -2px darken(#1a1d29, 3%);
 }
 
 .navbar-link {
