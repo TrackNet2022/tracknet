@@ -27,3 +27,18 @@
         flex-flow: row wrap;
     }
 }
+.divList{
+    padding: 3rem;
+}
+.emptyList{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    svg{
+        width: 40%;
+        height: auto;
+    }
+}
+
