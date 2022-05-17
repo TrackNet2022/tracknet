@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { Serie } from 'src/app/models/serie'
 import { MoviedbService } from 'src/app/services/moviedb.service'
@@ -12,12 +12,19 @@ import { SerieService } from 'src/app/services/serie.service'
 export class SearchPageComponent {
   resultSeries: Observable<Serie[]> = new Observable()
   searchTerm = ''
-
-  constructor(private _serieService: SerieService) { }
+  series: Serie[] = []
+  constructor(private _serieService: SerieService) {
+    _serieService.getDiscoverSeries().subscribe({
+      next: (v: Serie[]) => (this.series = v),
+      error: (e) => console.error(e)
+    })
+  }
 
   onChange(searchTerm: string) {
     if (searchTerm.length > 3) {
       this.search()
+    } else {
+      this.resultSeries = new Observable()
     }
   }
 

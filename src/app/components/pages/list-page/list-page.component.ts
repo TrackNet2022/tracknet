@@ -19,6 +19,7 @@ export class ListPageComponent implements OnInit {
   constructor(private _userService: UserService) {}
 
   ngOnInit(): void {
+    // const element1 = (document.getElementById('yourSerieLabel') = new Element())
     const data = this._userService.getUserSerieList()
     if (data != null) {
       this.userSerieList$ = data
@@ -27,6 +28,8 @@ export class ListPageComponent implements OnInit {
           series.filter((serie: Serie) => serie.next_episode_to_air)
         )
       )
+    } else {
+      // element1.style.display = 'none'
     }
   }
 
