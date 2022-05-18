@@ -9,10 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { HomePageComponent } from './components/pages/home-page/home-page.component'
 import { SerieTeaserComponent } from './components/elements/serie-teaser/serie-teaser.component'
 import { FooterComponent } from './components/structure/footer/footer.component'
-import { LoginPageComponent } from './components/pages/login-page/login-page.component'
 import { ListPageComponent } from './components/pages/list-page/list-page.component'
 import { CalendarElementComponent } from './components/elements/calendar-element/calendar-element.component'
-import { FavoriteCategoriesElementComponent } from './components/elements/favorite-categories-element/favorite-categories-element.component'
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http'
 import { SerieDetailComponent } from './components/pages/serie-detail/serie-detail.component'
 import { SearchPageComponent } from './components/pages/search-page/search-page.component'
@@ -30,10 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     HomePageComponent,
     SerieTeaserComponent,
     FooterComponent,
-    LoginPageComponent,
     ListPageComponent,
     CalendarElementComponent,
-    FavoriteCategoriesElementComponent,
     SerieDetailComponent,
     SearchPageComponent,
     SeriesListComponent,

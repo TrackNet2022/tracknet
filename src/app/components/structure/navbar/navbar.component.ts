@@ -4,6 +4,7 @@ import {
   faMagnifyingGlass,
   faPlus
 } from '@fortawesome/free-solid-svg-icons'
+
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',
@@ -13,9 +14,4 @@ export class NavbarComponent {
   faHouse = faHouse
   faMagnifyingGlass = faMagnifyingGlass
   faPlus = faPlus
-
-  toggleSearchBox() {
-    const searchBox = document.getElementById('search-box')
-    searchBox?.classList.toggle('active')
-  }
 }

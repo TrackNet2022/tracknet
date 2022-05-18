@@ -13,7 +13,11 @@ export class UserService {
     private _serieService: SerieService,
     private _localStorage: LocalStorageService
   ) {}
-  getUserSerieList() {
+  /**
+   * Obtiene todos los datos de las series en la lista del usuario
+   * @returns
+   */
+  getUserSerieList(): Observable<any[]> | null {
     const userList: number[] = this._localStorage.getItem('data')
     if (userList) {
       const serieObs$: Observable<Serie>[] = userList.map(
@@ -21,6 +25,7 @@ export class UserService {
           return this._serieService.getSerieDetail(serieId)
         }
       )
+      //Combinar varias promesas en una
       return combineLatest(serieObs$).pipe(
         map((series) => series.map((serie: any) => serie.data))
       )

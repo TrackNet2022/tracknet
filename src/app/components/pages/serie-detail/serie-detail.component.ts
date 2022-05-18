@@ -33,6 +33,10 @@ export class SerieDetailComponent {
     })
   }
 
+  /**
+   * Función que guarda la serie en la lista
+   * @param id identificador de serie
+   */
   saveToList(id: number) {
     const currentData: number[] = this._localStorageService.getItem('data')
     console.log(currentData)

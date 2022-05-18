@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
 import { Serie } from 'src/app/models/serie'
 import { SerieService } from 'src/app/services/serie.service'
 
@@ -8,13 +9,11 @@ import { SerieService } from 'src/app/services/serie.service'
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent {
-  series: Serie[] = []
+export class HomePageComponent implements OnInit {
+  series$: Observable<Serie[]> | undefined
 
-  constructor(_serieService: SerieService) {
-    _serieService.getDiscoverSeries().subscribe({
-      next: (v: Serie[]) => (this.series = v),
-      error: (e) => console.error(e)
-    })
+  constructor(private _serieService: SerieService) {}
+  ngOnInit(): void {
+    this.series$ = this._serieService.getDiscoverSeries()
   }
 }

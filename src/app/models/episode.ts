@@ -1,3 +1,6 @@
+/**
+ * Representación de la estructura de datos que sigue un cápitulo devuelto por nuestra API
+ */
 export interface Episode {
   air_date: string
   episode_number: number

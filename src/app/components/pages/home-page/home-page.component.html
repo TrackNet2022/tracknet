@@ -1,3 +1,8 @@
-<series-list [series]="series">
-    
-</series-list>
+<div *ngIf="series$ | async; let series; else: loading">
+  <series-list [series]="series">
+
+  </series-list>
+</div>
+<ng-template #loading>
+  dslakj
+</ng-template>
