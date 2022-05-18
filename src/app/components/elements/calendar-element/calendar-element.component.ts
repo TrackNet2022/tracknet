@@ -2,16 +2,7 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core'
 import { Serie } from 'src/app/models/serie'
 
 import { CalendarEvent, CalendarView } from 'angular-calendar'
-import {
-  isSameMonth,
-  isSameDay,
-  startOfMonth,
-  endOfMonth,
-  startOfWeek,
-  endOfWeek,
-  startOfDay,
-  endOfDay
-} from 'date-fns'
+import { isSameMonth, isSameDay } from 'date-fns'
 import { combineLatest, map, Observable } from 'rxjs'
 import { SerieService } from 'src/app/services/serie.service'
 import { LocalStorageService } from 'src/app/services/local-storage.service'
@@ -43,26 +34,15 @@ export class CalendarElementComponent implements OnInit {
   constructor(
     private _serieService: SerieService,
     private _localStorage: LocalStorageService
-  ) {
-    this.fetchEvents()
-  }
+  ) {}
   ngOnInit(): void {
     this.fetchEvents()
   }
-
+  /**
+   * Función que hace una petición a la API, y recibe una lista de Series
+   * para posteriormente tranformar del modelo Serie al modelo CalendarEvent
+   */
   fetchEvents(): void {
-    const getStart = {
-      month: startOfMonth,
-      week: startOfWeek,
-      day: startOfDay
-    }[this.view]
-
-    const getEnd: any = {
-      month: endOfMonth,
-      week: endOfWeek,
-      day: endOfDay
-    }[this.view]
-
     const userList = this._localStorage.getItem('data')
     if (userList.length > 1) {
       const requestList = userList.map((id: number) => {
@@ -90,7 +70,10 @@ export class CalendarElementComponent implements OnInit {
       )
     }
   }
-
+  /**
+   * Función para controlar cuando un día del calendario es clickado por el usuario
+   * @param param0 Fecha actual y los eventos
+   */
   dayClicked({
     date,
     events

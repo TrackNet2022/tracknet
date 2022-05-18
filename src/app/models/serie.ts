@@ -1,5 +1,8 @@
 import { Episode } from './episode'
-
+/**
+ * Representación de la estructura de datos que sigue una Serie devuelta por nuestra API
+ *
+ */
 export interface Serie {
   backdrop_path: string | null
   created_by: {
