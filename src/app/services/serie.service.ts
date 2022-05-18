@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 
-// Importo map reactive extentions
+// Import map reactive extentions
 import { Observable } from 'rxjs'
 import { Serie } from '../models/serie'
 
@@ -13,14 +13,14 @@ export class SerieService {
   constructor(private http: HttpClient) {}
   /**
    * Obtener la URL de la API
-   * @param path Parametros extra
+   * @param path Parámetros extra
    * @returns URL completa
    */
   getQuery(path: string) {
     const url = `https://api.tracknet.one${path}`
 
-    // Si la peticion se hace con http.get da error porque moviedb no acepta cross domain
-    //por eso es importante verificar el uso de jsonp para poder hacer solicitud a otros dominios
+    // Si la petición se hace con http.get da error porque moviedb no acepta cross domain
+    // por eso es importante verificar el uso de jsonp para poder hacer solicitud a otros dominios
     return url
   }
 
@@ -36,13 +36,18 @@ export class SerieService {
   /**
    * Obtiene todos los datos de una serie
    * @param serieId Identificador de la serie
-   * @returns
+   * @returns Observable<Serie>
    */
   getSerieDetail(serieId: number): Observable<any> {
     const query = this.getQuery(`/api/serie/${serieId}`)
     return this.http.get<Serie>(query)
   }
 
+  /**
+   * Obtiene todos los datos de una serie
+   * @param serieId Identificador de la serie
+   * @returns Observable<Serie[]>
+   */
   searchByTerm(term: string): Observable<any> {
     const query = this.getQuery(`/api/search?term=${term}`)
     return this.http.get<Serie[]>(query)

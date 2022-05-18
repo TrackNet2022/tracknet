@@ -24,6 +24,11 @@ export class AddToListButtonComponent implements OnInit {
     }
   }
 
+  /**
+   * Controla cuando el usuario hace click en el botón para guardar una serie a la lista
+   * y muestra una notificación
+   * @param id
+   */
   saveToList(id: number) {
     const currentData: number[] = this._localStorage.getItem('data')
     console.log(currentData)

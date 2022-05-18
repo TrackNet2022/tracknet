@@ -11,15 +11,14 @@ import { faCalendar } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./list-page.component.scss']
 })
 export class ListPageComponent implements OnInit {
-  userSerieList$: Observable<Serie[]> = new Observable()
-  userNextEpisodes$: Observable<Serie[]> = new Observable()
+  userSerieList$: Observable<Serie[]> | undefined
+  userNextEpisodes$: Observable<Serie[]> | undefined
   faCalendar = faCalendar
   actualView = 'list'
 
   constructor(private _userService: UserService) {}
 
   ngOnInit(): void {
-    // const element1 = (document.getElementById('yourSerieLabel') = new Element())
     const data = this._userService.getUserSerieList()
     if (data != null) {
       this.userSerieList$ = data
@@ -28,11 +27,11 @@ export class ListPageComponent implements OnInit {
           series.filter((serie: Serie) => serie.next_episode_to_air)
         )
       )
-    } else {
-      // element1.style.display = 'none'
     }
   }
-
+  /**
+   * Función para controlar el funcionamiento del boton y cambiar entre componentes
+   */
   onClick() {
     if (this.actualView == 'calendar') this.actualView = 'list'
     else this.actualView = 'calendar'
