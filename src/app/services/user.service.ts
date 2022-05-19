@@ -33,4 +33,9 @@ export class UserService {
 
     return null
   }
+
+  isListEmpty() {
+    const data = this._localStorage.getItem('data')
+    return data == null || data.length == 0
+  }
 }
