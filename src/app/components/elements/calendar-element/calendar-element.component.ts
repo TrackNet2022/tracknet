@@ -6,6 +6,7 @@ import { isSameMonth, isSameDay } from 'date-fns'
 import { combineLatest, map, Observable } from 'rxjs'
 import { SerieService } from 'src/app/services/serie.service'
 import { LocalStorageService } from 'src/app/services/local-storage.service'
+import { UserService } from 'src/app/services/user.service'
 
 function getTimezoneOffsetString(date: Date): string {
   const timezoneOffset = date.getTimezoneOffset()
@@ -30,9 +31,9 @@ export class CalendarElementComponent implements OnInit {
   viewDate: Date = new Date()
 
   activeDayIsOpen = false
-  events$: Observable<CalendarEvent<{ film: Serie }>[]> = new Observable()
+  events$: Observable<CalendarEvent<{ film: Serie }>[]> | undefined
   constructor(
-    private _serieService: SerieService,
+    private _userService: UserService,
     private _localStorage: LocalStorageService
   ) {}
   ngOnInit(): void {
@@ -44,13 +45,8 @@ export class CalendarElementComponent implements OnInit {
    */
   fetchEvents(): void {
     const userList = this._localStorage.getItem('data')
-    if (userList.length > 1) {
-      const requestList = userList.map((id: number) => {
-        return this._serieService
-          .getSerieDetail(id)
-          .pipe(map((response) => response.data))
-      })
-      this.events$ = combineLatest<CalendarEvent[]>(requestList).pipe(
+    if (userList.length > 0) {
+      this.events$ = this._userService.getUserSerieList()?.pipe(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         map((series: any) => {
           return series.map((serie: Serie) => {

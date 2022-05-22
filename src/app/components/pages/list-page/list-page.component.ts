@@ -15,18 +15,23 @@ export class ListPageComponent implements OnInit {
   userNextEpisodes$: Observable<Serie[]> | undefined
   faCalendar = faCalendar
   actualView = 'list'
+  isListEmpty: boolean | undefined
 
   constructor(private _userService: UserService) {}
 
   ngOnInit(): void {
-    const data = this._userService.getUserSerieList()
-    if (data != null) {
-      this.userSerieList$ = data
-      this.userNextEpisodes$ = data.pipe(
-        map((series: Serie[]) =>
-          series.filter((serie: Serie) => serie.next_episode_to_air)
+    this.isListEmpty = this._userService.isListEmpty()
+    if (!this._userService.isListEmpty()) {
+      const data = this._userService.getUserSerieList()
+
+      if (data != null) {
+        this.userSerieList$ = data
+        this.userNextEpisodes$ = data.pipe(
+          map((series: Serie[]) =>
+            series.filter((serie: Serie) => serie.next_episode_to_air)
+          )
         )
-      )
+      }
     }
   }
   /**
