@@ -3,8 +3,7 @@ import { Serie } from 'src/app/models/serie'
 
 import { CalendarEvent, CalendarView } from 'angular-calendar'
 import { isSameMonth, isSameDay } from 'date-fns'
-import { combineLatest, map, Observable } from 'rxjs'
-import { SerieService } from 'src/app/services/serie.service'
+import { map, Observable } from 'rxjs'
 import { LocalStorageService } from 'src/app/services/local-storage.service'
 import { UserService } from 'src/app/services/user.service'
 
