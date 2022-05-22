@@ -1,10 +1,15 @@
 <div *ngIf="!isListEmpty; else emptyList">
   <div [ngSwitch]="actualView" *ngIf="userSerieList$ | async; let series">
     <div *ngIf="series.length > 0">
-      <div class="col-lg-12 d-flex justify-content-end">
-        <a class="btn btn-primary" (click)="onClick()">
-          <fa-icon [icon]="faCalendar"></fa-icon>
-        </a>
+      <div *ngIf="userNextEpisodes$ | async; let nextEpisodes">
+        <div
+          *ngIf="nextEpisodes.length > 0"
+          class="col-lg-12 d-flex justify-content-end"
+        >
+          <a class="btn btn-primary" (click)="onClick()">
+            <fa-icon [icon]="faCalendar"></fa-icon>
+          </a>
+        </div>
       </div>
       <div ngClass="col-lg-12" *ngSwitchCase="'list'">
         <div *ngIf="userSerieList$ | async; let seriotas">
