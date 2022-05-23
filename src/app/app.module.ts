@@ -21,6 +21,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
 import { AddToListButtonComponent } from './components/shared/add-to-list-button/add-to-list-button.component'
 import { ToastrModule } from 'ngx-toastr'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

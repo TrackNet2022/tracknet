@@ -4,7 +4,7 @@ import { map, Observable } from 'rxjs'
 import { Serie } from 'src/app/models/serie'
 
 import { UserService } from 'src/app/services/user.service'
-import { faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark, faCalendar } from '@fortawesome/free-solid-svg-icons'
 @Component({
   selector: 'list-page',
   templateUrl: './list-page.component.html',
@@ -14,6 +14,7 @@ export class ListPageComponent implements OnInit {
   userSerieList$: Observable<Serie[]> | undefined
   userNextEpisodes$: Observable<Serie[]> | undefined
   faCalendar = faCalendar
+  faBookmark = faBookmark
   actualView = 'list'
   isListEmpty: boolean | undefined
 
