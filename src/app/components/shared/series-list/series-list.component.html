@@ -1,5 +1,17 @@
-<div class="series-list">
-    <serie-teaser *ngFor="let serie of series"
-        [serieData]="serie">
-    </serie-teaser>
+<div class="series-list" *ngIf="!loading; else isLoading">
+  <serie-teaser *ngFor="let serie of series" [serieData]="serie">
+  </serie-teaser>
 </div>
+
+<ng-template #isLoading>
+    <div class="series-list">
+        <div class="skeleton-teaser" *ngFor="let i of series">
+          <ngx-skeleton-loader
+            animation="progress-dark"
+            [theme]="{ 'height.%': 100, 'background-color': '#32384f'}"
+          >
+          </ngx-skeleton-loader>
+        </div>
+      </div>
+      
+</ng-template>
