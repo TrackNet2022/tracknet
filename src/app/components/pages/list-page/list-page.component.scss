@@ -1,9 +1,31 @@
-.emptyList{
+.emptyList {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
-    gap: 4rem;
+    justify-content: center;
+    min-height: 85vh;
+    text-align: center;
+
+    svg {
+        max-width: 100%;
+        max-height: 300px;
+    }
+
+    .help-text {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+  
+
+
+        p {
+            font-size: 1rem;
+            margin-top: 1rem;
+            color: #969ba1;
+        }
+    }
+
+
 }
 
 a {
@@ -11,6 +33,7 @@ a {
     padding: 0 1rem;
     border-radius: 0.5rem;
     transition: 0.3s;
+
     fa-icon {
         font-size: 1.5rem;
         color: white;
