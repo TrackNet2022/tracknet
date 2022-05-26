@@ -20,6 +20,10 @@
     }
 }
 
+.divList {
+    margin-top: 2rem;
+}
+
 .serie {
     &-grid {
         display: flex;
@@ -27,9 +31,7 @@
         flex-flow: row wrap;
     }
 }
-.divList{
-    padding: 3rem;
-}
+
 .emptyList{
     display: flex;
     justify-content: center;
